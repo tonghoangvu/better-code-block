@@ -3,7 +3,8 @@
 	"version": "1.0.0",
 	"description": "A Chrome extension for better rendering of code blocks",
 	"scripts": {
-		"lint": "eslint --ignore-path .gitignore --fix **/*.js"
+		"lint": "eslint --ignore-path .gitignore --fix **/*.js",
+		"format": "prettier --ignore-path .gitignore --write ."
 	},
 	"repository": {
 		"type": "git",
@@ -20,6 +21,8 @@
 	},
 	"homepage": "https://github.com/tonghoangvu/better-code-block#readme",
 	"devDependencies": {
-		"eslint": "^8.7.0"
+		"eslint": "^8.7.0",
+		"eslint-config-prettier": "^8.3.0",
+		"prettier": "^2.5.1"
 	}
 }
