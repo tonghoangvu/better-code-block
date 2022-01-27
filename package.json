@@ -1,0 +1,20 @@
+{
+	"name": "better-code-block",
+	"version": "1.0.0",
+	"description": "A Chrome extension for better rendering of code blocks",
+	"scripts": {},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/tonghoangvu/better-code-block.git"
+	},
+	"author": {
+		"name": "Tong Hoang Vu",
+		"email": "tonghoangvu@outlook.com",
+		"url": "https://github.com/tonghoangvu"
+	},
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/tonghoangvu/better-code-block/issues"
+	},
+	"homepage": "https://github.com/tonghoangvu/better-code-block#readme"
+}
