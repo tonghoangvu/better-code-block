@@ -3,8 +3,8 @@
 	"version": "1.0.0",
 	"description": "A Chrome extension for better rendering of code blocks",
 	"scripts": {
-		"lint": "eslint --ignore-path .gitignore --fix **/*.js",
-		"format": "prettier --ignore-path .gitignore --write ."
+		"lint": "eslint --fix **/*.js",
+		"format": "prettier --write ."
 	},
 	"repository": {
 		"type": "git",
