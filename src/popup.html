@@ -5,8 +5,31 @@
 		<title>Better Code Block</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="css/normalize.css" />
+		<link rel="stylesheet" href="css/global.css" />
+		<link rel="stylesheet" href="css/popup.css" />
 		<script src="js/util.js" defer></script>
 		<script src="js/popup.js" defer></script>
 	</head>
-	<body></body>
+	<body>
+		<div class="group">
+			<input type="checkbox" id="disable-translate-code" />
+			<label for="disable-translate-code">Disable translate code</label>
+		</div>
+		<div class="group">
+			<input type="checkbox" id="custom-tab-size" />
+			<label for="custom-tab-size">Custom tab size</label>
+			<input
+				type="number"
+				id="tab-size"
+				class="ml-auto"
+				min="0"
+				max="99" />
+		</div>
+		<p id="message" hidden></p>
+		<hr />
+		<div class="group">
+			<button id="discard" class="ml-auto">Discard</button>
+			<button id="save" autofocus>Save</button>
+		</div>
+	</body>
 </html>

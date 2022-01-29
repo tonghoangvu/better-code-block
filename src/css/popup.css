@@ -1,0 +1,28 @@
+body {
+	width: 210px;
+}
+
+.group {
+	display: flex;
+	align-items: center;
+}
+
+.group:not(:last-child) {
+	margin-bottom: 0.5rem;
+}
+
+.group > *:not(:last-child) {
+	margin-right: 0.25rem;
+}
+
+.ml-auto {
+	margin-left: auto;
+}
+
+#tab-size {
+	width: 2.5rem; /* Length 2 */
+}
+
+#message {
+	margin: 0 0 0.5rem 0;
+}
