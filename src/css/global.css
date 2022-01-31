@@ -1,0 +1,23 @@
+body {
+	font-size: 16px;
+	line-height: 1.5;
+	padding: 1rem;
+}
+
+button,
+input {
+	padding: 0.4rem;
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+	width: 1rem;
+	height: 1rem;
+}
+
+hr {
+	border: none;
+	height: 1px;
+	margin: 1rem 0;
+	background-color: #e6e6e6;
+}
