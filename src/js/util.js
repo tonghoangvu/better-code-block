@@ -6,11 +6,10 @@ async function getOption(name) {
 }
 
 async function loadOptions() {
-	const [disableTranslateCode, customTabSize, tabSize] = await Promise.all([
-		getOption('disable-translate-code'),
-		getOption('custom-tab-size'),
-		getOption('tab-size'),
-	])
+	// Should use Promise.all() when possible
+	const disableTranslateCode = await getOption('disable-translate-code')
+	const customTabSize = await getOption('custom-tab-size')
+	const tabSize = await getOption('tab-size')
 	return {
 		'disable-translate-code': disableTranslateCode,
 		'custom-tab-size': customTabSize,

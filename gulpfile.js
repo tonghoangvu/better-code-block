@@ -4,7 +4,6 @@ const gulpHtmlMin = require('gulp-htmlmin')
 const gulpAutoPrefixer = require('gulp-autoprefixer')
 const gulpCleanCss = require('gulp-clean-css')
 const gulpUglify = require('gulp-uglify')
-const gulpBabel = require('gulp-babel')
 
 function clean(callback) {
 	return gulp
@@ -43,7 +42,6 @@ function processCss(callback) {
 function processJs(callback) {
 	return gulp
 		.src('src/**/*.js')
-		.pipe(gulpBabel({ presets: ['@babel/env'] }))
 		.pipe(gulpUglify())
 		.pipe(gulp.dest('dist'))
 		.on('end', callback)
