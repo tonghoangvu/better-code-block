@@ -20,9 +20,13 @@
 		"url": "https://github.com/tonghoangvu/better-code-block/issues"
 	},
 	"homepage": "https://github.com/tonghoangvu/better-code-block#readme",
+	"browserslist": [
+		"defaults"
+	],
 	"devDependencies": {
 		"eslint": "^8.7.0",
 		"eslint-config-prettier": "^8.3.0",
+		"eslint-plugin-compat": "^4.0.1",
 		"gulp": "^4.0.2",
 		"gulp-autoprefixer": "^8.0.0",
 		"gulp-clean": "^0.4.0",
