@@ -1,3 +1,11 @@
 .disable-selection {
 	user-select: none;
 }
+
+.text-center {
+	text-align: center;
+}
+
+.text-small {
+	font-size: 0.75rem;
+}
