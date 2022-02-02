@@ -6,14 +6,14 @@ async function getOption(name) {
 }
 
 async function loadOptions() {
-	// Should use Promise.all() when possible
-	const disableTranslateCode = await getOption('disable-translate-code')
-	const customTabSize = await getOption('custom-tab-size')
-	const tabSize = await getOption('tab-size')
+	// Run in parallel and wait all to finish (can use Promise.all())
+	const disableTranslateCodePromise = getOption('disable-translate-code')
+	const customTabSizePromise = getOption('custom-tab-size')
+	const tabSizePromise = getOption('tab-size')
 	return {
-		'disable-translate-code': disableTranslateCode,
-		'custom-tab-size': customTabSize,
-		'tab-size': tabSize,
+		'disable-translate-code': await disableTranslateCodePromise,
+		'custom-tab-size': await customTabSizePromise,
+		'tab-size': await tabSizePromise,
 	}
 }
 
@@ -26,7 +26,6 @@ function buildMessage(code, data) {
 }
 
 async function sendMessageToAllTabs(message) {
-	await chrome.tabs.query({}, tabs => {
-		for (const tab of tabs) chrome.tabs.sendMessage(tab.id, message)
-	})
+	const tabs = await chrome.tabs.query({})
+	for (const tab of tabs) chrome.tabs.sendMessage(tab.id, message) // Don't need to wait
 }
