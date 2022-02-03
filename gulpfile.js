@@ -25,10 +25,10 @@ function copySrc(callback) {
 
 function copyManifest(profile, callback) {
 	// Add suffix to extension name (key "name" in manifest.json)
-	const suffix = profile === 'prod' ? '' : ' (' + profile + ')'
+	const suffix = profile === 'prod' ? '' : ` (${profile})`
 	return gulp
 		.src('src/manifest.json')
-		.pipe(gulpReplace(/"name": "(.+)"/g, '"name": "$1' + suffix + '"'))
+		.pipe(gulpReplace(/"name": "(.+)"/g, `"name": "$1${suffix}"`))
 		.pipe(gulp.dest('dist'))
 		.on('end', callback)
 }
