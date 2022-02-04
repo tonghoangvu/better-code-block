@@ -82,7 +82,7 @@ function validateUi() {
 	const tabSize = Number(tabSizeInput.value)
 	if (isNaN(minTabSize) || isNaN(maxTabSize) || isNaN(tabSize)) return null
 	if (tabSize < minTabSize || tabSize > maxTabSize)
-		return 'Tab size must be between ' + minTabSize + ' and ' + maxTabSize
+		return `Tab size must be between ${minTabSize} and ${maxTabSize}`
 	return null
 }
 
