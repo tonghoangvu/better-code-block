@@ -27,5 +27,6 @@
 			"js": ["js/util.js", "js/content.js"]
 		}
 	],
+	"minimum_chrome_version": "93",
 	"permissions": ["activeTab", "storage"]
 }
