@@ -27,12 +27,16 @@ function copySrc(callback) {
 		.on('end', callback)
 }
 
-function copyManifest(profile, callback) {
-	// Add suffix to extension name (key "name" in manifest.json)
-	const suffix = profile === 'prod' ? '' : ` (${profile})`
+function processManifest(profile, callback) {
+	const suffix = profile === null ? '' : ` (${profile})`
 	return gulp
 		.src(`${SOURCE_DIR}/manifest.json`)
-		.pipe(gulpReplace(/"name": "(.+)"/g, `"name": "$1${suffix}"`))
+		.pipe(
+			// Look at key "name" in manifest.json
+			// Extract only the extension name and append suffix
+			// The extension name only contains \w and \s, and must end with \w
+			gulpReplace(/"name": "([\w\s]*\w).*"/, `"name": "$1${suffix}"`)
+		)
 		.pipe(gulp.dest(OUTPUT_DIR))
 		.on('end', callback)
 }
@@ -65,7 +69,7 @@ function processJs(callback) {
 function build(profile, callback) {
 	return gulp.parallel(
 		copySrc,
-		callback => copyManifest(profile, callback),
+		callback => processManifest(profile, callback),
 		processHtml,
 		processCss,
 		processJs
@@ -73,5 +77,5 @@ function build(profile, callback) {
 }
 
 exports.clean = clean
-exports.dev = gulp.series(clean, callback => build('dev', callback))
-exports.prod = gulp.series(clean, callback => build('prod', callback))
+exports.dev = gulp.series(clean, callback => build('development', callback))
+exports.prod = gulp.series(clean, callback => build(null, callback)) // Production profile
