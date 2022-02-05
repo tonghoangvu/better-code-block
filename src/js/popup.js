@@ -18,9 +18,10 @@ async function load() {
 }
 
 function applyOptionsToUi(options) {
-	disableTranslateCodeInput.checked = options['disable-translate-code']
-	customTabSizeInput.checked = options['custom-tab-size']
-	tabSizeInput.value = options['tab-size']
+	disableTranslateCodeInput.checked =
+		options[OptionKey.DISABLE_TRANSLATE_CODE]
+	customTabSizeInput.checked = options[OptionKey.CUSTOM_TAB_SIZE]
+	tabSizeInput.value = options[OptionKey.TAB_SIZE]
 }
 
 function updateTabSizeInputStatus() {
@@ -88,9 +89,9 @@ function validateUi() {
 
 function collectOptionsFromUi() {
 	return {
-		'disable-translate-code': disableTranslateCodeInput.checked,
-		'custom-tab-size': customTabSizeInput.checked,
-		'tab-size': tabSizeInput.value,
+		[OptionKey.DISABLE_TRANSLATE_CODE]: disableTranslateCodeInput.checked,
+		[OptionKey.CUSTOM_TAB_SIZE]: customTabSizeInput.checked,
+		[OptionKey.TAB_SIZE]: tabSizeInput.value,
 	}
 }
 

@@ -8,8 +8,11 @@ chrome.runtime.onMessage.addListener(message => {
 
 async function load() {
 	const options = await loadOptions()
-	applyDisableTranslateCode(options['disable-translate-code'])
-	applyTabSize(options['custom-tab-size'], options['tab-size'])
+	applyDisableTranslateCode(options[OptionKey.DISABLE_TRANSLATE_CODE])
+	applyTabSize(
+		options[OptionKey.CUSTOM_TAB_SIZE],
+		options[OptionKey.TAB_SIZE]
+	)
 }
 
 function applyDisableTranslateCode(isDisabled) {

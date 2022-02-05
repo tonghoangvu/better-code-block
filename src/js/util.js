@@ -1,5 +1,12 @@
 /* eslint-disable no-unused-vars */
 
+// Don't use the name Option
+const OptionKey = {
+	DISABLE_TRANSLATE_CODE: 'disable-translate-code',
+	CUSTOM_TAB_SIZE: 'custom-tab-size',
+	TAB_SIZE: 'tab-size',
+}
+
 async function getOption(name) {
 	const data = await chrome.storage.sync.get(name)
 	return data[name]
@@ -7,13 +14,15 @@ async function getOption(name) {
 
 async function loadOptions() {
 	// Run in parallel and wait all to finish (can use Promise.all())
-	const disableTranslateCodePromise = getOption('disable-translate-code')
-	const customTabSizePromise = getOption('custom-tab-size')
-	const tabSizePromise = getOption('tab-size')
+	const disableTranslateCodePromise = getOption(
+		OptionKey.DISABLE_TRANSLATE_CODE
+	)
+	const customTabSizePromise = getOption(OptionKey.CUSTOM_TAB_SIZE)
+	const tabSizePromise = getOption(OptionKey.TAB_SIZE)
 	return {
-		'disable-translate-code': await disableTranslateCodePromise,
-		'custom-tab-size': await customTabSizePromise,
-		'tab-size': await tabSizePromise,
+		[OptionKey.DISABLE_TRANSLATE_CODE]: await disableTranslateCodePromise,
+		[OptionKey.CUSTOM_TAB_SIZE]: await customTabSizePromise,
+		[OptionKey.TAB_SIZE]: await tabSizePromise,
 	}
 }
 
