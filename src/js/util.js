@@ -15,7 +15,7 @@ async function getOption(name) {
 async function loadOptions() {
 	// Run in parallel and wait all to finish (can use Promise.all())
 	const disableTranslateCodePromise = getOption(
-		OptionKey.DISABLE_TRANSLATE_CODE
+		OptionKey.DISABLE_TRANSLATE_CODE,
 	)
 	const customTabSizePromise = getOption(OptionKey.CUSTOM_TAB_SIZE)
 	const tabSizePromise = getOption(OptionKey.TAB_SIZE)

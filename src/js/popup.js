@@ -1,5 +1,5 @@
 const disableTranslateCodeInput = document.getElementById(
-	'disable-translate-code'
+	'disable-translate-code',
 )
 const customTabSizeInput = document.getElementById('custom-tab-size')
 const tabSizeInput = document.getElementById('tab-size')
@@ -30,7 +30,7 @@ function updateTabSizeInputStatus() {
 
 function assignEventsForInputs() {
 	disableTranslateCodeInput.addEventListener('change', () =>
-		doAlert('UNSAVED')
+		doAlert('UNSAVED'),
 	)
 	customTabSizeInput.addEventListener('change', () => {
 		updateTabSizeInputStatus()

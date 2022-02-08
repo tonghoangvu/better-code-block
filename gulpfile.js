@@ -35,7 +35,7 @@ function processManifest(profile, callback) {
 			// Look at key "name" in manifest.json
 			// Extract only the extension name and append suffix
 			// The extension name only contains \w and \s, and must end with \w
-			gulpReplace(/"name": "([\w\s]*\w).*"/, `"name": "$1${suffix}"`)
+			gulpReplace(/"name": "([\w\s]*\w).*"/, `"name": "$1${suffix}"`),
 		)
 		.pipe(gulp.dest(OUTPUT_DIR))
 		.on('end', callback)
@@ -72,7 +72,7 @@ function build(profile, callback) {
 		callback => processManifest(profile, callback),
 		processHtml,
 		processCss,
-		processJs
+		processJs,
 	)(callback)
 }
 
