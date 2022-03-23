@@ -69,7 +69,7 @@ function processJs(callback) {
 function build(profile, callback) {
 	return gulp.parallel(
 		copySrc,
-		callback => processManifest(profile, callback),
+		manifestCallback => processManifest(profile, manifestCallback),
 		processHtml,
 		processCss,
 		processJs,

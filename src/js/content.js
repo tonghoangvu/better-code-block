@@ -1,9 +1,6 @@
 load()
 chrome.runtime.onMessage.addListener(message => {
-	switch (message.code) {
-		case 'RELOAD':
-			load()
-	}
+	if (message.code == 'RELOAD') load()
 })
 
 async function load() {
