@@ -69,7 +69,7 @@ function processJs(callback) {
 function build(profile, callback) {
 	return gulp.parallel(
 		copySrc,
-		manifestCallback => processManifest(profile, manifestCallback),
+		(manifestCallback) => processManifest(profile, manifestCallback),
 		processHtml,
 		processCss,
 		processJs,
@@ -77,5 +77,5 @@ function build(profile, callback) {
 }
 
 exports.clean = clean
-exports.dev = gulp.series(clean, callback => build('development', callback))
-exports.prod = gulp.series(clean, callback => build(null, callback)) // Production profile
+exports.dev = gulp.series(clean, (callback) => build('development', callback))
+exports.prod = gulp.series(clean, (callback) => build(null, callback)) // Production profile

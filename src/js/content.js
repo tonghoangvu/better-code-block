@@ -1,5 +1,5 @@
 load()
-chrome.runtime.onMessage.addListener(message => {
+chrome.runtime.onMessage.addListener((message) => {
 	if (message.code == 'RELOAD') load()
 })
 
