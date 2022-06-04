@@ -15,7 +15,7 @@ async function load() {
 function applyDisableTranslateCode(isDisabled) {
 	const NO_TRANSLATE_CLASS = 'notranslate'
 	const elements = document.querySelectorAll(
-		'pre, code, textarea, .codeblock, .syntaxhighlighter',
+		'pre, code, textarea, .codeblock, .syntaxhighlighter, .enlighter',
 	)
 	for (const element of elements)
 		if (isDisabled === true) element.classList.add(NO_TRANSLATE_CLASS)
