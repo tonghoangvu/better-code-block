@@ -1,4 +1,4 @@
-# From .gitignore
+# From .gitignore (Prettier skips node_modules by default)
 private/
 dist/
 node_modules/

@@ -19,11 +19,7 @@
 			"error",
 			"tab",
 			{
-				"SwitchCase": 1,
-				"FunctionDeclaration": {
-					"body": 1,
-					"parameters": 2
-				}
+				"SwitchCase": 1
 			}
 		],
 		"semi": ["error", "never"],
@@ -31,8 +27,9 @@
 		"linebreak-style": ["error", "unix"],
 		"brace-style": ["error", "1tbs"],
 		"eol-last": ["error", "always"],
-		"comma-dangle": ["error", "only-multiline"],
+		"comma-dangle": ["error", "always-multiline"],
 		"array-bracket-spacing": ["error", "never"],
-		"object-curly-spacing": ["error", "always"]
+		"object-curly-spacing": ["error", "always"],
+		"arrow-parens": ["error", "always"]
 	}
 }
